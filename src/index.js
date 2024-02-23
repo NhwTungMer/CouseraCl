@@ -6,7 +6,13 @@ const route = require('./routes')
 //db cnt
 const db = require('./config/dbconnect/DbCnt')
 
-db.connect();
+
+app.use(express.json())
+
+app.use(express.urlencoded({ extended: false }))
+
+
+
 
 const { engine } = require('express-handlebars')
 const path = require('path')
